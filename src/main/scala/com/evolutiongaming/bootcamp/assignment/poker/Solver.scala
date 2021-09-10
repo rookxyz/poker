@@ -88,7 +88,7 @@ object Solver {
       def getThreeOfaKindIdx(l:List[Int]):List[Int] = getXofaKindIdx(l, 3).filter(x => x != 0)
       def getFourOfaKindIdx(l:List[Int]):List[Int] = getXofaKindIdx(l, 4).filter(x => x != 0)
       def getStraightIdx(l:List[Int]):List[Int] = l.zipWithIndex.filter(pair => pair._1 == 5).map(pair => pair._2)
-      def getHighCardIdx(l:List[Int]):List[Int] = l.zipWithIndex.filter(pair => pair._1 > 0).filter(x => x._2 != 0).map(x => x._2) //.maxBy(pair => pair._2)._2
+      def getHighCardIdx(l:List[Int]):List[Int] = l.zipWithIndex.filter(pair => pair._1 > 0).filter(x => x._2 != 0).map(x => x._1 * x._2) //.maxBy(pair => pair._2)._2
 
       def getHasStraight(sIdx: List[Int]): Boolean = !sIdx.isEmpty
       def getHasFlush(c: Array[Array[Int]]): Boolean = getMaxRowSum(c) == 5
@@ -266,12 +266,10 @@ object Solver {
   }
   def process(line: String): String = {
     val ErrorPrefix = "Error: "
-
+    println("Got input line: " + line)
     line.toLowerCase.split("\\s+").toList match {
       case "texas-holdem" :: board :: hands   => {val g= new TexasHoldemGame(board, hands); g.printOutput()}
-      case "omaha-holdem" :: board :: hands   => {
-          val g = new OmahaHoldemGame(board, hands); g.printOutput()
-        }
+      case "omaha-holdem" :: board :: hands   => {val g = new OmahaHoldemGame(board, hands); g.printOutput()}
       case "five-card-draw" :: hands          => {val g = new FiveCardDrawGame(hands); g.printOutput()}
       case x :: _                             => ErrorPrefix + "Unrecognized game type"
       case _                                  => ErrorPrefix + "Invalid input"
