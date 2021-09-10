@@ -7,7 +7,7 @@ object Main {
   def main(args: Array[String]): Unit = {
     Iterator.continually(Option(StdIn.readLine()))
       .takeWhile(_.nonEmpty)
-      .foreach(line => {println("Read: " + line); println(process(line.getOrElse("")))})
+      .foreach(line => {println(process(line.getOrElse("")))})
 
 }
 }

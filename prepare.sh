@@ -11,3 +11,5 @@ sdk install java 15.0.1.j9-adpt
 sdk install sbt
 
 sbt clean compile test
+sbt assembly
+sbt assemblyPackageDependency

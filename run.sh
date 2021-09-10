@@ -1,2 +1,2 @@
 #!/bin/bash
-sbt --error 'set showSuccess := false' run
+java -jar ./lib/poker-hand-evaluator-assembly-0.1-deps.jar
