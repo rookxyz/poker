@@ -266,7 +266,7 @@ object Solver {
   }
   def process(line: String): String = {
     val ErrorPrefix = "Error: "
-    line.toLowerCase.split("\\s+").toList match {
+    line.split("\\s+").toList match {
       case "texas-holdem" :: board :: hands   => {val g= new TexasHoldemGame(board, hands); g.printOutput()}
       case "omaha-holdem" :: board :: hands   => {val g = new OmahaHoldemGame(board, hands); g.printOutput()}
       case "five-card-draw" :: hands          => {val g = new FiveCardDrawGame(hands); g.printOutput()}
