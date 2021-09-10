@@ -13,7 +13,7 @@ object Main {
 //      }
     Iterator.continually(Option(StdIn.readLine()))
       .takeWhile(_.nonEmpty)
-      .foreach(line => println(process(line)))
+      .foreach(line => println(process(line.getOrElse(""))))
 
 
   //    .foreach { x =>
