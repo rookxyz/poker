@@ -88,7 +88,7 @@ object Solver {
       def getThreeOfaKindIdx(l:List[Int]):List[Int] = getXofaKindIdx(l, 3).filter(x => x != 0)
       def getFourOfaKindIdx(l:List[Int]):List[Int] = getXofaKindIdx(l, 4).filter(x => x != 0)
       def getStraightIdx(l:List[Int]):List[Int] = l.zipWithIndex.filter(pair => pair._1 == 5).map(pair => pair._2)
-      def getHighCardIdx(l:List[Int]):List[Int] = l.zipWithIndex.filter(pair => pair._1 > 0).filter(x => x._2 != 0).map(x => x._1 * x._2) //.maxBy(pair => pair._2)._2
+      def getHighCardIdx(l:List[Int]):List[Int] = l.zipWithIndex.filter(x => x._2 != 0).map(x => x._1)
 
       def getHasStraight(sIdx: List[Int]): Boolean = !sIdx.isEmpty
       def getHasFlush(c: Array[Array[Int]]): Boolean = getMaxRowSum(c) == 5
