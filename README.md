@@ -1,13 +1,13 @@
 ## Solution Details
-The program implements an algorithm for sorting poker hands according to their strength for the follwing games types:
+The program implements an algorithm for sorting poker hands according to their strength for the follwing game types:
 * Texas Holdem
 * Omaha Holdem
 * Five Card Draw
 The program is written in Scala programming language.
 
 ### How to run
-1. Make sure that scripts _run.sh_ and _prepare.sh_ are executable. Use _chmod +x_ if necessary. 
-2.Run _prepare.sh_ script to install the required prequisites.
+1. Make sure that scripts _run.sh_ and _prepare.sh_ are executable. Use _chmod +x_ if necessary.
+2. Run _prepare.sh_ script to install the required prequisites.
 3. To run the program execute the shell script _run.sh_. The program reads from lines from standard input. 
 Use redirection _<_ to read input from file.
 
