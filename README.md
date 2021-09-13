@@ -34,4 +34,4 @@ Changes to:
 * build.sbt - defined program main class, set _*.jar_ location
 * prepare.sh - added commands to create fat jar
 * run.sh - added _eval_ command to run the application, otherwise the file contents were not redirected to
-the standard input. changed from _sbt run_ to _java -jar_ to run the program.
+the standard input. Changed from _sbt run_ to _java -jar_ to run the program.
